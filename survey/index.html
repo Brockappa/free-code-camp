@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Concert+One&family=Libre+Baskerville:wght@700&display=swap"
+      rel="stylesheet"
+    />
+    <meta charset="UTF-8" />
+    <title>Survey FCC</title>
+    <style>
+      @font-face {
+        font-family: "Friz Quadrata";
+        src: url("/freecodecamp/survey/Friz-Quadrata-Regular.ttf")
+          format("truetype");
+        font-weight: normal;
+      }
+      @font-face {
+        font-family: "Friz Quadrata";
+        src: url("/freecodecamp/survey/Friz-Quadrata-Bold.otf")
+          format("opentype");
+        font-weight: bold;
+      }
+      body {
+        background-image: linear-gradient(
+            115deg,
+            rgba(136, 136, 206, 0.7),
+            rgba(136, 136, 206, 0.7)
+          ),
+          url("https://www.teahub.io/photos/full/7-75812_league-of-legends-preseason-2020.png");
+        background-size: cover;
+      }
+      #title {
+        font-weight: 400;
+        margin: 15px auto 0 0;
+        text-align: center;
+        color: rgba(201, 149, 8, 0.87);
+        -webkit-text-stroke: 0.7px black;
+        font-size: 35px;
+      }
+      #description {
+        font-size: 1.125em;
+        font-style: italic;
+        font-weight: 300;
+      }
+      #survey-form {
+        margin: auto;
+        background-color: rgba(255, 255, 255, 0.8);
+        font-family: "concert one", sans-serif;
+      }
+      .form-group {
+        text-align: left;
+        padding: 15px;
+        display: block;
+      }
+      label {
+        display: block;
+        margin-bottom: 3px;
+      }
+      .container {
+        max-width: 540px;
+        margin: auto;
+        padding-top: 20px;
+      }
+      .text-center {
+        text-align: center;
+      }
+      .form-control {
+        border: solid;
+        border-width: 1px;
+      }
+      .header {
+        font-family: "Friz Quadrata", sans-serif;
+      }
+      .input-textarea {
+        min-height: 133px;
+        min-width: 502px;
+        resize: vertical;
+      }
+    </style>
+  </head>
+  <body>
+    <main>
+      <div class="container">
+        <header class="header">
+          <h1 id="title" class="text-center">League of Legends Survey Form</h1>
+          <p id="description" class="description text-center">
+            Help us improve
+          </p>
+        </header>
+        <form id="survey-form">
+          <div class="form-group">
+            <label id="name-label" for="name">Summoner name</label>
+            <input
+              type="text"
+              name="name"
+              id="name"
+              placeholder="Enter your summoner name"
+              required
+            />
+          </div>
+          <div class="form-group">
+            <label id="email-label" for="email">Email</label>
+            <input
+              type="email"
+              name="email"
+              id="email"
+              class="form-control"
+              placeholder="Enter your email address"
+              required
+            />
+          </div>
+          <div class="form-group">
+            <label id="number-label" for="number">Age (optional)</label>
+            <input
+              type="number"
+              name="age"
+              id="number"
+              min="6"
+              max="99"
+              class="form-control"
+              placeholder="Age"
+            />
+          </div>
+          <div class="form-group">
+            <p>What role do you play most often</p>
+            <select id="dropdown" name="role" class="form-control" required>
+              <option disabled selected value>Select main role</option>
+              <option value="top">Top</option>
+              <option value="mid">Mid</option>
+              <option value="jungle">Jungle</option>
+              <option value="bot">Bot</option>
+              <option value="support">Support</option>
+              <option value="other">Other</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <p>Would you recommend this game to a friend</p>
+            <label>
+              <input
+                name="user-recommend"
+                value="no"
+                type="radio"
+                class="input-radio"
+                checked
+              />No
+            </label>
+            <label>
+              <input
+                name="user-recommend"
+                value="lmaoNo"
+                type="radio"
+                class="input-radio"
+              />Lmao no
+            </label>
+          </div>
+          <div class="form-group">
+            <p>What change would you most like to see?</p>
+            <select
+              id="most-like"
+              name="mostlike"
+              class="form-control"
+              required
+            >
+              <option disabled selected value>Select an option.</option>
+              <option value="revertItems">Revert mythic items</option>
+              <option value="revertRunes">Revert Runes Reforged</option>
+              <option value="revertShop">Revert new shop</option>
+              <option value="everything">
+                I don't have all day to type everything wrong with this company,
+                all the above.
+              </option>
+            </select>
+          </div>
+          <div class="form-group">
+            <p>
+              What would you like to see us improve?
+              <span class="clue">(Select all that apply)</span>
+            </p>
+            <label>
+              <input
+                type="checkbox"
+                name="prefer"
+                value="code"
+                class="input-checkbox"
+              />Your trash code
+            </label>
+            <label>
+              <input
+                name="prefer"
+                value="toxicity"
+                class="input-checkbox"
+                type="checkbox"
+              />Toxic, griefing community
+            </label>
+            <label>
+              <input
+                name="prefer"
+                value="champion-balance"
+                type="checkbox"
+                class="input-checkbox"
+              />No more '200 years' champs
+            </label>
+            <label>
+              <input
+                name="prefer"
+                value="season-six"
+                type="checkbox"
+                class="input-checkbox"
+              />Just bring back Season 6
+            </label>
+          </div>
+          <div class="form-group">
+            <p>Any comments or concerns?</p>
+            <textarea
+              class="input-textarea"
+              name="comment"
+              placeholder="Enter your kind comment here..."
+            ></textarea>
+          </div>
+          <div class="form-group">
+            <button type="submit" id="submit" class="submit-button">
+              Submit
+            </button>
+          </div>
+        </form>
+      </div>
+    </main>
+    <script src="https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js"></script>
+  </body>
+</html>
