@@ -1,49 +1,164 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Beau+Rivage&display=swap" rel="stylesheet">
     <meta charset="UTF-8" />
     <title>FCC product landing</title>
     <style>
-      header {
-        font-size: 200;
+      body {
+        margin: auto;
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+        background-image: linear-gradient(115deg , rgba(255, 221, 146, 0.8), rgba(255, 221, 146, 0.7)), url("http://www.cellodreaming.com.au/wp-content/uploads/2014/08/louise-King-eudlo-Halle_84.jpg");
+        background-size: cover;
       }
-      #header-img {
+      #header {
+        font-size: 25px;
+        font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        position: fixed;
+        width: 100%;
+        top: 0;
+        left: 0;
+        background-color: rgba(255, 255, 255, 0.5);
+      }
+      @media (max-width: 600px) {
+        header {
+          flex-wrap: wrap;
+        }
+      }
+        nav ul {
         display: inline;
-        margin: 10px 0px 0px 20px;
-      } 
-nav ul {
-  margin: 30px 10px 0px 2000px
+        flex-wrap: nowrap;  
 }
       nav li {
         display: inline;
-        margin-left: 200px;        
+        padding-right: 30px;
+      }
+      ul {
+        display: inline;
+        row-gap: 15px;
+      }
+      li {
+        display: inline;
+      }
+      #page-wrapper {
+        position: relative;
       }
       #form {
         margin: auto;
-        background-color: rgba(255, 255, 255, 0.8);
-        font-family: "concert one", sans-serif;     
+      }
+      #features {
+        margin: auto;
+        width: 100%;
+        
+      }
+      #header-img {
+        display: inline;
+        margin: 0;
+        width: 64px;
+        height: 150px;
+        padding-top: 15px;
+      }
+      #hero {
+        display: inline;
+        margin: auto;
+        width: 100%;
+        text-align: center;
+      }
+      #submit {
+        display: block;
+        margin: auto;
+        text-align: center;
+        background-color: rgba(255, 115, 0, 1.0);
+        border: solid;
+        border-width: 3px;
+        border-color: rgb(68, 68, 68);
+        border-radius: 5px;
+        margin-bottom: 30px;
+      }
+      #email {
+        margin-bottom: 8px;
+        border: solid;
+        border-width: 2px;
+      }
+      #pricing {
+        text-align: center;
+        margin: auto;
+      }
+      #nav-bar {
+        text-align: right;
+        margin-right: 30px;
+        padding-bottom: 20px;
+      }
+      .container {
+        text-align: center;
+      }
+     
+      .flex-container {
+        display: flex;
+        flex-direction: row;
+        text-align: center;
+        justify-content: center;
+        margin-top: 50px;
+      }
+      .flexbox-item {
+        width: 200px;
+        margin: 10px;
+        border: 4px solid black;
+        border-radius: 8px;
+        background-color: #dfdfdf;
+        line-height: 1.7;
+      }
+      .flexbox-item-1 {
+        min-height: 100px;
+      }
+      .flexbox-item-2 {
+        min-height: 200px;
+      }
+      .flexbox-item-3 {
+        min-height: 300px;
+      }
+      .logo {
+        font-family: 'Beau Rivage', 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        margin: 15px 0px 0px 20px;
+        display: inline;
+        
+      }
+      .logo-text {
+        font-size: 60px;
+        font-weight: bold;
+        color: rgb(68, 68, 68);
+        display: inline;
+        padding-left: 40px;
+      }
+      .grid {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
       }
     </style>
   </head>
   <body>
+    <main>
     <div id="page-wrapper">
       <header id="header">
         <div class="logo">
           <img
             id="header-img"
-            src="https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.istockphoto.com%2Fillustrations%2Fcello&psig=AOvVaw0bZ00GB_MwSzRP_iz6FGz2&ust=1648615350953000&source=images&cd=vfe&ved=0CAsQjRxqFwoTCIiYpvjA6vYCFQAAAAAdAAAAABAL"
-            alt="cello logo"
-          /> Okay Cellos
+            src= "celloiconlogo.png" 
+            alt="cello logo"/> 
+            <div class="logo-text">Okay Cellos</div> 
         </div>
         <nav id="nav-bar">
           <ul>
             <li>
-              <a class="nav-link" href="features">Features</a>
+              <a class="nav-link" href="#features">Features</a>
             </li>
             <li>
-              <a class="nav-link" href="pricing">Pricing</a>
+              <a class="nav-link" href="#pricing">Pricing</a>
             </li>
-            <li><a class="nav-link" href="How-it-works">How it works</a></li>
+            <li><a class="nav-link" href="#how-it-works">How it works</a></li>
           </ul>
         </nav>
       </header>
@@ -52,7 +167,7 @@ nav ul {
       <h2>Cellos made of wood (They work)</h2>
     <form id="form" action="https://www.freecodecamp.com/email-submit">
       <input type="email" name="email" placeholder="Please enter your email address" id="email" required>
-    <input id="button" type="submit" value="Get Started" class="btn">
+    <input id="submit" type="submit" value="Get Started" class="btn">
     </form>
     </section>
     <div class="container">
@@ -64,7 +179,7 @@ nav ul {
               We use only the most okay wood to make our cellos.
             </p>
           </div>
-          <div id="desc">
+          <div class="desc">
             <h2>Shipping</h2>
             <p>
               We don't do shipping...
@@ -76,16 +191,22 @@ nav ul {
               Bro the woods okay, you got a 50/50 chance of getting a cello that works.
             </p>
         </div>
+        </div>
       </section>
-      <section id=" how it works">
-        <iframe id="video" src="https://www.youtube.com/embed/dQw4w9WgXcQ?autoplay=1" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+      <section id="how-it-works">
+        <iframe id="video" width="560" height="315" src="https://www.youtube.com/embed/uT3SBzmDxGk" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
       </section>
       <section id="pricing">
         <h2>Pricing</h2>
+        <div class="flex-container">
+          <div class="flexbox-item flexbox-item-1"><h4>Basic $0</h4><p>This <strong>Basic</strong> package comes with a cello thats made wood for $0.</p></div>
+          <div class="flexbox-item flexbox-item-2"><h4>Premium $0</h4><p>This <strong>Premium</strong> package comes with a cello thats still made wood for $0.</p></div>
+          <div class="flexbox-item flexbox-item-3"><h4>Gold $0</h4><p>This <strong>Gold</strong> package comes with a cello thats still made with, you guessed it, wood for $0.</p></div>
+        </div>
         <p>
           We don't charge for cellos.
         </p>
-    </div>
+      </section>
     <footer>
       <ul>
         <li>
@@ -97,7 +218,9 @@ nav ul {
         <li>
           <a href="#">Contact</a>
       </ul>
-      <span>Copyright 2022, Okay Cellos</span>
+      <span>© Copyright 2022, Okay Cellos</span>
     </footer>
+  </main>
+  <script src="https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js"></script>
   </body>
 </html>
